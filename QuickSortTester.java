@@ -68,18 +68,94 @@ public class QuickSortTester {
         long time = 0;
         long s = 0;
         long e = 0;
-        int[] data = new int[SIZE];
+        int[] data1 = new int[1];
+	int[] data2 = new int[10];
+	int[] data3 = new int[100];
+	int[] data4 = new int[1000];
+	int[] data5 = new int[10000];
+	int[] data6 = new int[100000];
 
+	//warm-up
+	for ( long rounds = ROUNDS; rounds > 0; rounds-- ) {
+            for ( int i = 0; i < data2.length; i++ ) {
+                data2[i] = (int) ( 1000 * Math.random() );
+            }
+            
+            QuickSort.qsort(data2);
+	                               
+        }
+	
+        
+	//size 1 array
+	time = 0;
         for ( long rounds = ROUNDS; rounds > 0; rounds-- ) {
-            for ( int i = 0; i < data.length; i++ ) {
-                data[i] = (int) ( 1000 * Math.random() );
+            for ( int i = 0; i < data1.length; i++ ) {
+                data1[i] = (int) ( 1000 * Math.random() );
             }
             s = System.nanoTime();
-            QuickSort.qsort(data);
+            QuickSort.qsort(data1);
             e = System.nanoTime();
 
             time += (e - s);
         }
-        System.out.format("%s%20s%n", data.length, time / ROUNDS);
+        System.out.format("%s%20s%n", data1.length, time / ROUNDS);
+
+	//size 10 array
+	time = 0;
+	for ( long rounds = ROUNDS; rounds > 0; rounds-- ) {
+            for ( int i = 0; i < data2.length; i++ ) {
+                data2[i] = (int) ( 1000 * Math.random() );
+            }
+            s = System.nanoTime();
+            QuickSort.qsort(data2);
+            e = System.nanoTime();
+
+            time += (e - s);
+        }
+        System.out.format("%s%20s%n", data2.length, time / ROUNDS);
+
+	//size 100 array
+	time = 0;
+	for ( long rounds = ROUNDS; rounds > 0; rounds-- ) {
+            for ( int i = 0; i < data3.length; i++ ) {
+                data3[i] = (int) ( 1000 * Math.random() );
+            }
+            s = System.nanoTime();
+            QuickSort.qsort(data3);
+            e = System.nanoTime();
+
+            time += (e - s);
+        }
+        System.out.format("%s%20s%n", data3.length, time / ROUNDS);
+
+	//size 1000 array
+	time = 0;
+	for ( long rounds = ROUNDS; rounds > 0; rounds-- ) {
+            for ( int i = 0; i < data4.length; i++ ) {
+                data4[i] = (int) ( 1000 * Math.random() );
+            }
+            s = System.nanoTime();
+            QuickSort.qsort(data4);
+            e = System.nanoTime();
+
+            time += (e - s);
+        }
+        System.out.format("%s%20s%n", data4.length, time / ROUNDS);
+
+	//size 10000 array
+	time = 0;
+	for ( long rounds = ROUNDS; rounds > 0; rounds-- ) {
+            for ( int i = 0; i < data5.length; i++ ) {
+                data5[i] = (int) ( 1000 * Math.random() );
+            }
+            s = System.nanoTime();
+            QuickSort.qsort(data5);
+            e = System.nanoTime();
+
+            time += (e - s);
+        }
+        System.out.format("%s%20s%n", data5.length, time / ROUNDS);
+
+	
     }
 }
