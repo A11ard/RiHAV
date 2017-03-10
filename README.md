@@ -46,6 +46,7 @@ CONCLUSION: Since either one looks good, it'll be safe to assume that
 the true answer is in the middle, nlog(n). 
 
 
+
 BEST CASE:
 
 | Length |            TIME (nanoseconds)          |
@@ -58,11 +59,15 @@ BEST CASE:
 | 8      | 9354452 ,  9728904 ,  14232102           |
 
 n r squared = .1771
+
 ln r squared = .196
+
 n^2 r squared = .2245
+
 
 CONCLUSION: All three look to be very alike. Therefore, I think it should be
 between n^2 and log n. This means it is most like n or nlog(n). 
+
 
 
 
@@ -82,8 +87,12 @@ WORST CASE:
 | 5767    |         2938221      |
 
 n r squared = .274
+
 ln r squared = .345
+
 n^2 r squared = .543
+
 
 CONCLUSION: n^2 is clearly the closest to 1 by far, so this is probably
 order n^2. 
+
