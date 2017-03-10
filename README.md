@@ -39,7 +39,9 @@ AVERAGE CASE:
 | 5051     |         491657         |
 
 n^2 r squared = .9934
+
 n r squared = .99336
+
 CONCLUSION: Since either one looks good, it'll be safe to assume that
 the true answer is in the middle, nlog(n). 
 
